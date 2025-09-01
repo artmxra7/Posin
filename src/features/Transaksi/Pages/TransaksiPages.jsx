@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TransaksiPages = ({ props }) => {
+const TransaksiPages = () => {
   return (
     <div className="">
       

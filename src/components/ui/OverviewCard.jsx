@@ -35,40 +35,6 @@ const OverviewCard = () => {
     { value: "yearly", label: "Yearly" },
     { value: "annually", label: "Annually" },
   ];
-  // Label per bulan
-  const monthlyLabels = [
-    "01 Jun",
-    "02 Jun",
-    "03 Jun",
-    "04 Jun",
-    "05 Jun",
-    "06 Jun",
-    "07 Jun",
-    "08 Jun",
-    "09 Jun",
-    "10 Jun",
-    "11 Jun",
-    "12 Jun",
-  ];
-
-  // Label per tahun
-  const yearlyLabels = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  // Label per 5 tahun
-  const annuallyLabels = ["2019", "2020", "2021", "2022", "2023"];
 
   // Dataset chart per mode + per card
   const datasets = {

@@ -3,8 +3,6 @@ import { Menu, Bell } from "lucide-react";
 export default function HeaderBar({
   onToggleSidebar,
   onToggleCollapse,
-  isSidebarOpen,
-  isCollapsed,
 }) {
   const handleClick = () => {
     if (window.innerWidth < 1024) {

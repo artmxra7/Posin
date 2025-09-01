@@ -1,5 +1,9 @@
 import React from "react";
-import {OverviewCard, SalesTargetCard, TableCard} from '../../../components/ui'
+import {
+  OverviewCard,
+  SalesTargetCard,
+  TableCard,
+} from "@/components/ui";
 
 const DashboardPages = () => {
 

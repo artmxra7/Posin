@@ -1,9 +1,10 @@
 import React from 'react';
+import {TableCard} from '@/components/ui'
 
-const LaporanPages = ({ props }) => {
+const LaporanPages = () => {
   return (
     <div className="">
-      laporan
+      <TableCard />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./assets/index.css";
+import "@styles/global.css";
 import App from "./app/App";
 import Login from "./features/auth/pages/login";
 import DashboardPages from "./features/Dashboard/pages/Dashboard";

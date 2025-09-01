@@ -1,6 +1,5 @@
-import { useState } from "react";
 import ButtonMenu from "./ButtonMenu";
-const TableCard = ({ props }) => {
+const TableCard = () => {
   const orders = [
     {
       id: "#92627",
