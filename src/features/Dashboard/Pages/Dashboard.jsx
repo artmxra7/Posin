@@ -1,5 +1,5 @@
 import React from "react";
-import {OverviewCard, TableCard} from '../../../components/ui'
+import {OverviewCard, SalesTargetCard, TableCard} from '../../../components/ui'
 
 const DashboardPages = () => {
 
@@ -12,7 +12,9 @@ const DashboardPages = () => {
               <OverviewCard />
               <TableCard />
             </div>
-            <div className="flex flex-col gap-4 2xl:min-w-[360px]"></div>
+            <div className="flex flex-col gap-4 2xl:min-w-[360px]">
+              <SalesTargetCard />
+            </div>
           </div>
           <TableCard />
         </div>
