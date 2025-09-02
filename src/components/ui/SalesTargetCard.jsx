@@ -34,7 +34,7 @@ const SalesTargetCard = ({ props }) => {
           <div>
             <div className="progress circle">
               <div className="progress-circle">
-                <span className="progress-circle-info">
+                <span className="progress-circle-info ">
                   <span className="progress-info heading-text font-bold circle">
                     75%
                   </span>

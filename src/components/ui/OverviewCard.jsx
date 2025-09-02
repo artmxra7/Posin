@@ -239,32 +239,34 @@ const OverviewCard = () => {
             <button
               key={card.id}
               onClick={() => setActive(card.id)}
-              className={`p-4 rounded-2xl cursor-pointer ltr:text-left rtl:text-right transition duration-150 outline-hidden ${
+              className={`p-4 rounded-2xl cursor-pointer text-left transition duration-150 outline-hidden ${
                 active === card.id
                   ? "bg-white shadow-md"
                   : "bg-transparent hover:bg-gray-200/40"
               }`}
             >
-              <div>
+              <div className="flex gap-2  justify-between relative">
+                <div>
+                  <div className="mb-4 text-sm font-semibold">{card.title}</div>
+                  <h3 className="mb-1">{card.value}</h3>
+                  <div className="inline-flex items-center flex-wrap gap-1">
+                    <span
+                      className={`flex items-center font-bold text-${card.trend}`}
+                    >
+                      <span>{card.percent.startsWith("+") ? "+" : "-"}</span>
+                      <span>
+                        {card.percent.replace("+", "").replace("-", "")}
+                      </span>
+                    </span>
+                    <span>from last month</span>
+                  </div>
+                </div>
                 <div className={card.style}>
                   <img
                     src={card.icon}
                     alt={`${card.title} icon`}
                     className="w-6 h-6"
                   />
-                </div>
-                <div className="mb-4 text-sm font-semibold">{card.title}</div>
-                <h3 className="mb-1">{card.value}</h3>
-                <div className="inline-flex items-center flex-wrap gap-1">
-                  <span
-                    className={`flex items-center font-bold text-${card.trend}`}
-                  >
-                    <span>{card.percent.startsWith("+") ? "+" : "-"}</span>
-                    <span>
-                      {card.percent.replace("+", "").replace("-", "")}
-                    </span>
-                  </span>
-                  <span>from last month</span>
                 </div>
               </div>
             </button>
