@@ -1,12 +1,38 @@
 /* eslint-env node */
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { viteObfuscateFile } from "vite-plugin-obfuscator";
+import path from "path";
+
+function obfuscatorPlugin(options) {
+  return {
+    name: "vite-plugin-obfuscator-custom",
+    apply: "build",
+    enforce: "post",
+    generateBundle(outputOptions, bundle) {
+      for (const fileName of Object.keys(bundle)) {
+        if (fileName.endsWith(".js")) {
+          const chunk = bundle[fileName];
+          if (chunk.type === "chunk") {
+            chunk.code = viteObfuscateFile(chunk.code, options);
+          }
+        }
+      }
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    obfuscatorPlugin({
+      compact: true,
+      controlFlowFlattening: true,
+    }),
+  ],
+  css: {
+    postcss: "./postcss.config.js",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -23,11 +49,11 @@ export default defineConfig({
     port: 3000,
     open: true,
     proxy: {
-      "/api": "http://localhost:5000", // proxy ke backend dev server
+      "/api": "http://localhost:5000",
     },
   },
   build: {
     outDir: "dist",
-    sourcemap: true, // aktifin sourcemap biar gampang debugging
+    sourcemap: true,
   },
 });
