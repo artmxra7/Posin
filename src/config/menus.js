@@ -7,6 +7,11 @@ export const menuItems = [
     label: "Dashboard",
   },
   {
+    to: "/kasir",
+    icon: BarChart3,
+    label: "Kasir",
+  },
+  {
     to: "/laporan",
     icon: BarChart3,
     label: "Laporan",

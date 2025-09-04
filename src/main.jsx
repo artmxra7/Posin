@@ -8,6 +8,7 @@ import DashboardPages from "./features/Dashboard/pages/Dashboard";
 import Layout from "./components/layout/layout";
 import LaporanPages from "./features/Laporan/Pages/LaporanPages";
 import TransaksiPages from "./features/Transaksi/Pages/TransaksiPages";
+import KasirPages from "./features/Kasir/Pages/KasirPages";
 
 const root = createRoot(document.getElementById("root"));
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashboardPages />,
+      },
+      {
+        path: "/kasir",
+        element: <KasirPages />,
       },
       {
         path: "/laporan",

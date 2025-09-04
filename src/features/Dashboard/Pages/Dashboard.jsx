@@ -4,6 +4,7 @@ import {
   SalesTargetCard,
   TableCard,
 } from "@/components/ui";
+import { BaseCard } from "../../../components/ui";
 
 const DashboardPages = () => {
 
@@ -18,6 +19,9 @@ const DashboardPages = () => {
             </div>
             <div className="flex flex-col gap-4 2xl:min-w-[360px]">
               <SalesTargetCard />
+              <BaseCard title= "Top Product"/>
+              <BaseCard title= "Channel Revenue"/>
+              <BaseCard title= "Ads"/>
             </div>
           </div>
           <TableCard />
