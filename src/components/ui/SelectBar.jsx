@@ -5,23 +5,15 @@ export default function SelectBar({ options, ...props }) {
     <Select
       options={options}
       classNamePrefix="select"
-      className="select select-sm w-[120px]"
+      className="select select-sm w-[120px] select-control min-h-10 bg-gray-100 dark:bg-gray-700"
       unstyled
       menuPortalTarget={document.body}
       styles={{
         control: (base, state) => ({
           ...base,
-          minHeight: "40px",
-          borderRadius: "0.5rem", // rounded-lg
-          borderColor: state.isFocused ? "#3b82f6" : "#d1d5db", // blue-500 : gray-300
-          boxShadow: state.isFocused ? "0 0 0 1px #3b82f6" : "none",
-          "&:hover": {
-            borderColor: "#3b82f6",
-          },
         }),
         valueContainer: (base) => ({
           ...base,
-          padding: "0 0.75rem",
         }),
         indicatorsContainer: (base) => ({
           ...base,

@@ -8,33 +8,37 @@ const Layout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="flex h-screen">
-      {/* Sidebar */}
-      <SideBar
-        isOpen={isSidebarOpen}
-        toggleSidebar={() => setSidebarOpen((prev) => !prev)}
-        collapsed={collapsed}
-        setCollapsed={setCollapsed}
-      />
+    <div className="app-layout-collapsible-side flex flex-auto flex-col">
+      <div className="flex flex-auto min-w-0">
+        <div className="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
+          {/* Sidebar */}
+          <SideBar
+            isOpen={isSidebarOpen}
+            toggleSidebar={() => setSidebarOpen((prev) => !prev)}
+            collapsed={collapsed}
+            setCollapsed={setCollapsed}
+          />
 
-      {/* Konten utama */}
-      <div
-        className={`flex-1 flex flex-col transition-all duration-300 
+          {/* Konten utama */}
+          <div
+            className={`flex-1 flex flex-col transition-all duration-300 
           ${isSidebarOpen ? (collapsed ? "ml-20" : "ml-64") : "ml-0"}`}
-      >
-        <HeaderBar
-          onToggleSidebar={() => setSidebarOpen((prev) => !prev)} // mobile
-          onToggleCollapse={() => setCollapsed((prev) => !prev)} // desktop
-          isSidebarOpen={isSidebarOpen}
-          isCollapsed={collapsed}
-        />
-        <div className="h-full flex flex-auto flex-col">
-          <div className="h-full flex flex-auto flex-col justify-between">
-            <main className="h-full">
-              <div className="page-container relative h-full flex flex-auto flex-col px-4 sm:px-6 py-4 sm:py-6 md:px-8 container mx-auto">
-                <Outlet />
+          >
+            <HeaderBar
+              onToggleSidebar={() => setSidebarOpen((prev) => !prev)} // mobile
+              onToggleCollapse={() => setCollapsed((prev) => !prev)} // desktop
+              isSidebarOpen={isSidebarOpen}
+              isCollapsed={collapsed}
+            />
+            <div className="h-full flex flex-auto flex-col">
+              <div className="h-full flex flex-auto flex-col justify-between">
+                <main className="h-full">
+                  <div className="page-container relative h-full flex flex-auto flex-col px-4 sm:px-6 py-4 sm:py-6 md:px-8 container mx-auto">
+                    <Outlet />
+                  </div>
+                </main>
               </div>
-            </main>
+            </div>
           </div>
         </div>
       </div>

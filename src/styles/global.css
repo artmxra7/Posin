@@ -248,16 +248,6 @@
 /* Reset dan styling dasar */
 @layer base {
 
-  /* Reset dan Aturan Dasar */
-  *,
-  :after,
-  :before,
-  ::backdrop {
-    box-sizing: border-box;
-    border: 0 solid;
-    margin: 0;
-    padding: 0;
-  }
 
   ::file-selector-button {
     box-sizing: border-box;
@@ -541,6 +531,28 @@
 
 /* Komponen dan pengaturan UI */
 @layer components {
+  @media print {
+    .header {
+      display: none
+    }
+  }
+  .header {
+    top: calc(var(--spacing)*0);
+    z-index: 31;
+    background-color: var(--color-white);
+    width: 100%;
+    display: flex;
+    position: sticky
+  }
+  .header-wrapper {
+    width: 100%;
+    padding: calc(var(--spacing)*0);
+    padding-inline: calc(var(--spacing)*4);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: relative
+  }
   .progress {
       @apply inline-block;
     }
@@ -1054,6 +1066,30 @@
 
   .input-lg {
     @apply text-lg leading-lg;
+  }
+  .select__control {
+    border-radius: var(--radius-xl);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--gray-100);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: .15s;
+    justify-content: space-between;
+    align-items: center;
+    transition-duration: .15s;
+    display: flex
+  }
+  .select__value-container {
+    align-items: center;
+    row-gap: calc(var(--spacing)*2);
+    padding-inline: calc(var(--spacing)*3);
+    padding-block: calc(var(--spacing)*2);
+    flex-wrap: wrap;
+    flex: 1;
+    position: relative;
+    overflow: hidden
   }
 }
 

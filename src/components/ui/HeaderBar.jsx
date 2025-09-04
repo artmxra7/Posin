@@ -1,9 +1,6 @@
 import { Menu, Bell } from "lucide-react";
 
-export default function HeaderBar({
-  onToggleSidebar,
-  onToggleCollapse,
-}) {
+export default function HeaderBar({ onToggleSidebar, onToggleCollapse }) {
   const handleClick = () => {
     if (window.innerWidth < 1024) {
       onToggleSidebar();
@@ -12,11 +9,8 @@ export default function HeaderBar({
     }
   };
   return (
-    <header className="sticky top-0 z-50  bg-white border-b border-gray-200 px-4 h-14">
-      <div
-        className="header-wrapper flex items-center justify-between"
-        style={{ height: "64px" }}
-      >
+    <header className="header shadow-sm dark:shadow-2xl top-0 z-50  bg-white border-b border-gray-200 sm:h-18 h-13 shrink-0 gap-2 md:px-6 px-4">
+      <div className="header-wrapper" style={{ height: "64px" }}>
         {/* Left: hamburger (tetap di kiri) */}
         <div className="flex items-center">
           <button
@@ -35,11 +29,15 @@ export default function HeaderBar({
               1
             </span>
           </button>
-          <img
-            src="https://i.pravatar.cc/40"
-            alt="profile"
-            className="w-6 h-6 rounded-full border cursor-pointer"
-          />
+          <div className="cursor-pointer flex items-center">
+            <span className="avatar avatar-circle">
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="profile"
+                className="avatar-img avatar-circle"
+              />
+            </span>
+          </div>
         </div>
       </div>
     </header>
