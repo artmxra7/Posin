@@ -1,4 +1,12 @@
-import { Home, BarChart3, ShoppingBag, Settings } from "lucide-react";
+import {
+  Home,
+  BarChart3,
+  Clipboard,
+  Settings,
+  Package,
+  Contact,
+  Computer,
+} from "lucide-react";
 
 export const menuItems = [
   {
@@ -8,21 +16,40 @@ export const menuItems = [
   },
   {
     to: "/kasir",
-    icon: BarChart3,
+    icon: Computer,
     label: "Kasir",
   },
   {
-    to: "/laporan",
+    to: "/transaksi",
     icon: BarChart3,
-    label: "Laporan",
+    label: "Transaksi",
   },
   {
-    label: "Transaksi",
-    icon: ShoppingBag,
+    label: "Produk",
+    icon: Package,
     collapse: true,
     children: [
-      { to: "/transaksi/baru", label: "Baru" },
-      { to: "/transaksi/laporan", label: "Laporan" },
+      { to: "/produk/daftar-produk", label: "List Produk" },
+      { to: "/produk/penjualan", label: "Tambah Produk" },
+    ],
+  },
+  {
+    label: "Laporan",
+    icon: Clipboard,
+    collapse: true,
+    children: [
+      { to: "/laporan/baru", label: "Baru" },
+      { to: "/laporan/penjualan", label: "Penjualan" },
+    ],
+  },
+  {
+    to: "/kontak",
+    icon: Contact,
+    label: "Kontak",
+    collapse: true,
+    children: [
+      { to: "/kontak/baru", label: "Supplier" },
+      { to: "/kontak/penjualan", label: "Kostumer" },
     ],
   },
   {

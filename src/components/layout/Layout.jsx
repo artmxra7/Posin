@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import HeaderBar from "../ui/HeaderBar";
 import SideBar from "../ui/SideBar";
 import { Outlet } from "react-router-dom";
+import { useSidebar } from "./context/SidebarContext";
 
-const Layout = ({ children }) => {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
+const Layout = () => {
+  const { isSidebarVisible, hideSidebar, showSidebar } = useSidebar();
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -12,22 +13,24 @@ const Layout = ({ children }) => {
       <div className="flex flex-auto min-w-0">
         <div className="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
           {/* Sidebar */}
-          <SideBar
-            isOpen={isSidebarOpen}
-            toggleSidebar={() => setSidebarOpen((prev) => !prev)}
-            collapsed={collapsed}
-            setCollapsed={setCollapsed}
-          />
+          {isSidebarVisible && (
+            <SideBar
+              isOpen={true} // Menjaga sidebar tetap terbuka
+              toggleSidebar={() => showSidebar()} // Menampilkan sidebar
+              collapsed={collapsed}
+              setCollapsed={setCollapsed}
+            />
+          )}
 
           {/* Konten utama */}
           <div
             className={`flex-1 flex flex-col transition-all duration-300 
-          ${isSidebarOpen ? (collapsed ? "ml-20" : "ml-64") : "ml-0"}`}
+          ${isSidebarVisible ? (collapsed ? "ml-20" : "ml-64") : "ml-0"}`}
           >
             <HeaderBar
-              onToggleSidebar={() => setSidebarOpen((prev) => !prev)} // mobile
+              onToggleSidebar={() => hideSidebar()} // mobile
               onToggleCollapse={() => setCollapsed((prev) => !prev)} // desktop
-              isSidebarOpen={isSidebarOpen}
+              isSidebarOpen={isSidebarVisible}
               isCollapsed={collapsed}
             />
             <div className="h-full flex flex-auto flex-col">

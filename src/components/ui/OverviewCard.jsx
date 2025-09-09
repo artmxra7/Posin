@@ -275,7 +275,7 @@ const OverviewCard = () => {
 
         {/* Line Chart */}
         <div className="chartRef">
-          <div>
+          <div className=" mt-4">
             <Line data={chartData} options={options} />
           </div>
         </div>
