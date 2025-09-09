@@ -1222,6 +1222,82 @@
     position: relative;
     overflow: hidden
   }
+    :where(.table-default > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-bottom-style: var(--tw-border-style);
+      border-top-style: var(--tw-border-style);
+      border-top-width: calc(1px * var(--tw-divide-y-reverse));
+      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+      border-color: var(--gray-200);
+    }
+  
+    :where(.table-default:is(.dark *) > :not(:last-child)) {
+      border-color: var(--gray-700);
+    }
+  
+    .table-default>thead>tr>th {
+      padding-inline: calc(var(--spacing) * 6);
+      padding-block: calc(var(--spacing) * 3);
+      text-align: left;
+      font-size: var(--text-xs);
+      line-height: var(--tw-leading, var(--text-xs--line-height));
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: var(--tracking-wider);
+      color: var(--gray-500);
+      text-transform: uppercase;
+    }
+        .table-default {
+          table-layout: auto;
+          min-width: 100%
+        }
+  
+    .table-default>thead>tr>th:where(:dir(rtl), [dir=rtl], [dir=rtl] *) {
+      text-align: right;
+    }
+  
+    .table-default>thead>tr>th:is(.dark *) {
+      color: var(--gray-100);
+    }
+  
+    :where(.table-default > tbody > :not(:last-child)) {
+      --tw-divide-y-reverse: 0;
+      border-bottom-style: var(--tw-border-style);
+      border-top-style: var(--tw-border-style);
+      border-top-width: calc(1px * var(--tw-divide-y-reverse));
+      border-bottom-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+      border-color: var(--gray-200);
+    }
+  
+    :where(.table-default > tbody:is(.dark *) > :not(:last-child)) {
+      border-color: var(--gray-700);
+    }
+  
+    .table-default>tbody>tr>td {
+      padding-inline: calc(var(--spacing) * 6);
+      padding-block: calc(var(--spacing) * 4);
+    }
+  
+    .table-default>tfoot>tr>td {
+      border-top-style: var(--tw-border-style);
+      border-top-width: 1px;
+      border-color: var(--gray-200);
+      padding-inline: calc(var(--spacing) * 6);
+      padding-block: calc(var(--spacing) * 3);
+    }
+  
+    .table-default>tfoot>tr>td:is(.dark *) {
+      border-color: var(--gray-700);
+    }
+  
+    .table-flex {
+      min-width: 100%;
+    }
+
+        th,
+        td {
+          word-wrap: break-word
+        }
+
 }
 
 

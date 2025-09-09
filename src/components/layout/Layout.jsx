@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import HeaderBar from "../ui/HeaderBar";
-import SideBar from "../ui/SideBar";
+import { useState } from "react";
+import {SideBar, HeaderBar} from "@components/ui";
 import { Outlet } from "react-router-dom";
 import { useSidebar } from "./context/SidebarContext";
 
@@ -16,7 +15,7 @@ const Layout = () => {
           {isSidebarVisible && (
             <SideBar
               isOpen={true} // Menjaga sidebar tetap terbuka
-              toggleSidebar={() => showSidebar()} // Menampilkan sidebar
+              toggleSidebar={() => showSidebar()} // Untuk menampilkan sidebar
               collapsed={collapsed}
               setCollapsed={setCollapsed}
             />
@@ -25,11 +24,11 @@ const Layout = () => {
           {/* Konten utama */}
           <div
             className={`flex-1 flex flex-col transition-all duration-300 
-          ${isSidebarVisible ? (collapsed ? "ml-20" : "ml-64") : "ml-0"}`}
+            ${isSidebarVisible ? (collapsed ? "ml-20" : "ml-64") : "ml-0"}`}
           >
             <HeaderBar
-              onToggleSidebar={() => hideSidebar()} // mobile
-              onToggleCollapse={() => setCollapsed((prev) => !prev)} // desktop
+              onToggleSidebar={() => hideSidebar()} // Untuk tampilan mobile
+              onToggleCollapse={() => setCollapsed((prev) => !prev)} // Untuk desktop
               isSidebarOpen={isSidebarVisible}
               isCollapsed={collapsed}
             />

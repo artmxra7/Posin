@@ -29,7 +29,7 @@ export const menuItems = [
     icon: Package,
     collapse: true,
     children: [
-      { to: "/produk/daftar-produk", label: "List Produk" },
+      { to: "/produk/daftar-produk", label: "Daftar Produk" },
       { to: "/produk/penjualan", label: "Tambah Produk" },
     ],
   },

@@ -2,14 +2,13 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "@styles/global.css";
-import App from "./app/App";
 import Login from "./features/auth/pages/login";
 import DashboardPages from "./features/Dashboard/Pages/DashboardPages";
 import Layout from "./components/layout/layout";
 import TransaksiPages from "./features/Transaksi/Pages/TransaksiPages.jsx";
 import OrderConfirmPages from "./features/Kasir/Pages/OrderConfirmPages";
 import KasirPages from "./features/Kasir/Pages/KasirPages";
-import { Provider } from "react-redux"; // Import Redux Provider
+import { Provider } from "react-redux";
 import store from "./store/store";
 import { SidebarProvider } from "./components/layout/context/SidebarContext.jsx";
 import LaporanPenjualanPages from "./features/Laporan/Pages/LaporanPenjualanPages.jsx";
@@ -18,45 +17,52 @@ import DaftarProdukPages from "./features/Produk/Pages/DaftarProdukPages.jsx";
 
 const root = createRoot(document.getElementById("root"));
 
+// Definisikan elemen JSX sebagai variabel
+const loginElement = <Login />;
+const layoutElement = <Layout />;
+const dashboardElement = <DashboardPages />;
+const daftarProdukElement = <DaftarProdukPages />;
+const kasirElement = <KasirPages />;
+const laporanPenjualanElement = <LaporanPenjualanPages />;
+const laporanBaruElement = <LaporanBaruPages />;
+const transaksiElement = <TransaksiPages />;
+const orderConfirmElement = <OrderConfirmPages />;
+
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <Login />, // login tanpa layout
+    element: loginElement, // pakai variabel
   },
   {
-    element: <Layout />, // semua child route pakai layout
+    element: layoutElement,
     children: [
       {
-        path: "/",
-        element: <App />,
-      },
-      {
         path: "/dashboard",
-        element: <DashboardPages />,
+        element: dashboardElement,
       },
       {
         path: "/produk/daftar-produk",
-        element: <DaftarProdukPages />,
+        element: daftarProdukElement,
       },
       {
         path: "/kasir",
-        element: <KasirPages />,
+        element: kasirElement,
       },
       {
         path: "/laporan/penjualan",
-        element: <LaporanPenjualanPages />,
+        element: laporanPenjualanElement,
       },
       {
         path: "/laporan/baru",
-        element: <LaporanBaruPages />,
+        element: laporanBaruElement,
       },
       {
         path: "/transaksi",
-        element: <TransaksiPages />,
+        element: transaksiElement,
       },
       {
         path: "/kasir/confirm",
-        element: <OrderConfirmPages />,
+        element: orderConfirmElement,
       },
     ],
   },
