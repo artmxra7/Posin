@@ -30,7 +30,7 @@ export const menuItems = [
     collapse: true,
     children: [
       { to: "/produk/daftar-produk", label: "Daftar Produk" },
-      { to: "/produk/penjualan", label: "Tambah Produk" },
+      { to: "/produk/tambah-produk", label: "Tambah Produk" },
     ],
   },
   {

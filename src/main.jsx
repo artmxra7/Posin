@@ -14,6 +14,7 @@ import { SidebarProvider } from "./components/layout/context/SidebarContext.jsx"
 import LaporanPenjualanPages from "./features/Laporan/Pages/LaporanPenjualanPages.jsx";
 import LaporanBaruPages from "./features/Laporan/Pages/LaporanBaruPages.jsx";
 import DaftarProdukPages from "./features/Produk/Pages/DaftarProdukPages.jsx";
+import TambahProdukPages from "./features/Produk/Pages/TambahProdukPages.jsx";
 
 const root = createRoot(document.getElementById("root"));
 
@@ -27,6 +28,7 @@ const laporanPenjualanElement = <LaporanPenjualanPages />;
 const laporanBaruElement = <LaporanBaruPages />;
 const transaksiElement = <TransaksiPages />;
 const orderConfirmElement = <OrderConfirmPages />;
+const tambahProdukElement = <TambahProdukPages />;
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/produk/daftar-produk",
         element: daftarProdukElement,
+      },
+      {
+        path: "/produk/tambah-produk",
+        element: tambahProdukElement,
       },
       {
         path: "/kasir",
