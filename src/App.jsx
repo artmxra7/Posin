@@ -80,9 +80,9 @@ function App() {
     <Theme>
       <BrowserRouter>
       <Provider store={store}>
-        <SidebarProvider>
+          <Layout>
           <RouterProvider router={router} />
-        </SidebarProvider>
+          </Layout>
       </Provider>
       </BrowserRouter>
     </Theme>
