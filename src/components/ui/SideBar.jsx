@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
-  Home,
-  BarChart3,
-  ShoppingBag,
-  Settings,
-  ChevronLeft,
-  ChevronRight,
   ChevronDown,
 } from "lucide-react";
 import logo from "../../assets/images/logo.png";
-import { menuItems } from "../../config/menus";
+import { menuItems } from "../../configs/menus";
 
-const SideBar = ({ isOpen, toggleSidebar, collapsed, setCollapsed }) => {
+const SideBar = ({ isOpen, collapsed }) => {
   const [openMenu, setOpenMenu] = useState({});
   const baseLinkClass =
     "flex items-center gap-3 px-4 py-2 rounded-lg font-semibold transition-colors duration-150";
