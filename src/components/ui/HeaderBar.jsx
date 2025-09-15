@@ -9,7 +9,7 @@ export default function HeaderBar({ onToggleSidebar, onToggleCollapse }) {
     }
   };
   return (
-    <header className="header shadow-sm dark:shadow-2xl top-0 z-50  bg-white border-b border-gray-200 sm:h-18 h-13 shrink-0 gap-2 md:px-6 px-4">
+    <header className="header shadow-sm dark:shadow-2xl">
       <div className="header-wrapper" style={{ height: "64px" }}>
         {/* Left: hamburger (tetap di kiri) */}
         <div className="flex items-center">

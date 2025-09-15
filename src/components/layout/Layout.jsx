@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <div className="app-layout-collapsible-side flex flex-auto flex-col">
       <div className="flex flex-auto min-w-0">
-        <div className="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
+        <div className="side-nav side-nav-bg side-nav-expand">
           {/* Sidebar */}
           {isSidebarVisible && (
             <SideBar
@@ -20,12 +20,9 @@ const Layout = () => {
               setCollapsed={setCollapsed}
             />
           )}
-
+        </div>
+        <div className="flex flex-col flex-auto min-h-screen min-w-0 relative w-full">
           {/* Konten utama */}
-          <div
-            className={`flex-1 flex flex-col transition-all duration-300 
-            ${isSidebarVisible ? (collapsed ? "ml-20" : "ml-64") : "ml-0"}`}
-          >
             <HeaderBar
               onToggleSidebar={() => hideSidebar()} // Untuk tampilan mobile
               onToggleCollapse={() => setCollapsed((prev) => !prev)} // Untuk desktop
@@ -40,7 +37,6 @@ const Layout = () => {
                   </div>
                 </main>
               </div>
-            </div>
           </div>
         </div>
       </div>
