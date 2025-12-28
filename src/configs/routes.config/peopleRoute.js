@@ -1,12 +1,12 @@
 import { lazy } from 'react'
-import { CONCEPTS_PREFIX_PATH } from '@/constants/route.constant'
+import { PEOPLE_PREFIX_PATH } from '@/constants/route.constant'
 import { ADMIN, USER } from '@/constants/roles.constant'
 
-const conceptsRoute = [
+const peoplesRoute = [
   
     {
         key: 'concepts.customers.customerList',
-        path: `${CONCEPTS_PREFIX_PATH}/customers/customer-list`,
+        path: `${PEOPLE_PREFIX_PATH}/customers/customer-list`,
         component: lazy(
             () => import('@/views/concepts/customers/CustomerList'),
         ),
@@ -14,7 +14,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.customers.customerEdit',
-        path: `${CONCEPTS_PREFIX_PATH}/customers/customer-edit/:id`,
+        path: `${PEOPLE_PREFIX_PATH}/customers/customer-edit/:id`,
         component: lazy(
             () => import('@/views/concepts/customers/CustomerEdit'),
         ),
@@ -31,7 +31,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.customers.customerCreate',
-        path: `${CONCEPTS_PREFIX_PATH}/customers/customer-create`,
+        path: `${PEOPLE_PREFIX_PATH}/customers/customer-create`,
         component: lazy(
             () => import('@/views/concepts/customers/CustomerCreate'),
         ),
@@ -48,7 +48,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.customers.customerDetails',
-        path: `${CONCEPTS_PREFIX_PATH}/customers/customer-details/:id`,
+        path: `${PEOPLE_PREFIX_PATH}/customers/customer-details/:id`,
         component: lazy(
             () => import('@/views/concepts/customers/CustomerDetails'),
         ),
@@ -59,13 +59,13 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.products.productList',
-        path: `${CONCEPTS_PREFIX_PATH}/products/product-list`,
+        path: `${PEOPLE_PREFIX_PATH}/products/product-list`,
         component: lazy(() => import('@/views/concepts/products/ProductList')),
         authority: [ADMIN, USER],
     },
     {
         key: 'concepts.products.productEdit',
-        path: `${CONCEPTS_PREFIX_PATH}/products/product-edit/:id`,
+        path: `${PEOPLE_PREFIX_PATH}/products/product-edit/:id`,
         component: lazy(() => import('@/views/concepts/products/ProductEdit')),
         authority: [ADMIN, USER],
         meta: {
@@ -80,7 +80,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.products.productCreate',
-        path: `${CONCEPTS_PREFIX_PATH}/products/product-create`,
+        path: `${PEOPLE_PREFIX_PATH}/products/product-create`,
         component: lazy(
             () => import('@/views/concepts/products/ProductCreate'),
         ),
@@ -98,7 +98,7 @@ const conceptsRoute = [
   
     {
         key: 'concepts.orders.orderList',
-        path: `${CONCEPTS_PREFIX_PATH}/orders/order-list`,
+        path: `${PEOPLE_PREFIX_PATH}/orders/order-list`,
         component: lazy(() => import('@/views/concepts/orders/OrderList')),
         authority: [ADMIN, USER],
         meta: {
@@ -107,7 +107,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.orders.orderEdit',
-        path: `${CONCEPTS_PREFIX_PATH}/orders/order-edit/:id`,
+        path: `${PEOPLE_PREFIX_PATH}/orders/order-edit/:id`,
         component: lazy(() => import('@/views/concepts/orders/OrderEdit')),
         authority: [ADMIN, USER],
         meta: {
@@ -121,7 +121,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.orders.orderCreate',
-        path: `${CONCEPTS_PREFIX_PATH}/orders/order-create`,
+        path: `${PEOPLE_PREFIX_PATH}/orders/order-create`,
         component: lazy(() => import('@/views/concepts/orders/OrderCreate')),
         authority: [ADMIN, USER],
         meta: {
@@ -136,7 +136,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.orders.orderDetails',
-        path: `${CONCEPTS_PREFIX_PATH}/orders/order-details/:id`,
+        path: `${PEOPLE_PREFIX_PATH}/orders/order-details/:id`,
         component: lazy(() => import('@/views/concepts/orders/OrderDetails')),
         authority: [ADMIN, USER],
         meta: {
@@ -160,7 +160,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.account.settings',
-        path: `${CONCEPTS_PREFIX_PATH}/account/settings`,
+        path: `${PEOPLE_PREFIX_PATH}/account/settings`,
         component: lazy(() => import('@/views/concepts/accounts/Settings')),
         authority: [ADMIN, USER],
         meta: {
@@ -172,7 +172,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.account.activityLog',
-        path: `${CONCEPTS_PREFIX_PATH}/account/activity-log`,
+        path: `${PEOPLE_PREFIX_PATH}/account/activity-log`,
         component: lazy(() => import('@/views/concepts/accounts/ActivityLog')),
         authority: [ADMIN, USER],
         meta: {
@@ -181,7 +181,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.account.rolesPermissions',
-        path: `${CONCEPTS_PREFIX_PATH}/account/roles-permissions`,
+        path: `${PEOPLE_PREFIX_PATH}/account/roles-permissions`,
         component: lazy(
             () => import('@/views/concepts/accounts/RolesPermissions'),
         ),
@@ -193,7 +193,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.account.pricing',
-        path: `${CONCEPTS_PREFIX_PATH}/account/pricing`,
+        path: `${PEOPLE_PREFIX_PATH}/account/pricing`,
         component: lazy(() => import('@/views/concepts/accounts/Pricing')),
         authority: [ADMIN, USER],
         meta: {
@@ -202,7 +202,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.helpCenter.supportHub',
-        path: `${CONCEPTS_PREFIX_PATH}/help-center/support-hub`,
+        path: `${PEOPLE_PREFIX_PATH}/help-center/support-hub`,
         component: lazy(
             () => import('@/views/concepts/help-center/SupportHub'),
         ),
@@ -214,7 +214,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.helpCenter.article',
-        path: `${CONCEPTS_PREFIX_PATH}/help-center/article/:id`,
+        path: `${PEOPLE_PREFIX_PATH}/help-center/article/:id`,
         component: lazy(() => import('@/views/concepts/help-center/Article')),
         authority: [ADMIN, USER],
         meta: {
@@ -224,7 +224,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.helpCenter.editArticle',
-        path: `${CONCEPTS_PREFIX_PATH}/help-center/edit-article/:id`,
+        path: `${PEOPLE_PREFIX_PATH}/help-center/edit-article/:id`,
         component: lazy(
             () => import('@/views/concepts/help-center/EditArticle'),
         ),
@@ -236,7 +236,7 @@ const conceptsRoute = [
     },
     {
         key: 'concepts.helpCenter.manageArticle',
-        path: `${CONCEPTS_PREFIX_PATH}/help-center/manage-article`,
+        path: `${PEOPLE_PREFIX_PATH}/help-center/manage-article`,
         component: lazy(
             () => import('@/views/concepts/help-center/ManageArticle'),
         ),
@@ -249,7 +249,7 @@ const conceptsRoute = [
   
     {
         key: 'concepts.fileManager',
-        path: `${CONCEPTS_PREFIX_PATH}/file-manager`,
+        path: `${PEOPLE_PREFIX_PATH}/file-manager`,
         component: lazy(() => import('@/views/concepts/files/FileManager')),
         authority: [ADMIN, USER],
         meta: {
@@ -259,4 +259,4 @@ const conceptsRoute = [
     },
 ]
 
-export default conceptsRoute
+export default peoplesRoute

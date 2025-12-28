@@ -1,6 +1,6 @@
 import { THEME_ENUM } from "@/constants/theme.constant";
 export const themeConfig = {
-  themeSchema: "",
+  themeSchema: "default",
   direction: THEME_ENUM.DIR_LTR,
   mode: THEME_ENUM.MODE_LIGHT,
   panelExpand: false,

@@ -10,6 +10,8 @@ import SidePanel from '@/components//template/SidePanel'
 import LayoutBase from '@/components//template/LayoutBase'
 import useResponsive from '@/utils/hooks/useResponsive'
 import { LAYOUT_COLLAPSIBLE_SIDE } from '@/constants/theme.constant'
+import Button from '@/components/ui/Button'
+import { FaLaptop } from "react-icons/fa";
 
 const CollapsibleSide = ({ children }) => {
     const { larger, smaller } = useResponsive()
@@ -33,6 +35,12 @@ const CollapsibleSide = ({ children }) => {
                         }
                         headerEnd={
                             <>
+                            <div className="flex-wrap inline-flex xl:flex items-center gap-2">
+                              <Button className="mr-2" variant="solid" size="xs" icon={<FaLaptop />}
+                             >
+                                <span>POS</span>
+                              </Button>
+                            </div>
                                 <LanguageSelector />
                                 <Notification />
                                 <SidePanel />

@@ -1,11 +1,12 @@
 {
     "nav": {
         "dashboard": {
-            "dashboard": "Dashboard",
-            "ecommerce": "Ecommerce",
-            "analytic": "Analytic",
-            "project": "Project",
-            "marketing": "Marketing"
+          "dashboard": "Dashboard",
+          "pos": "POS",
+          "ecommerce": "Ecommerce",
+          "analytic": "Analytic",
+          "project": "Project",
+          "marketing": "Marketing"
         },
         "concepts": "Concepts",
         "conceptsAi": {

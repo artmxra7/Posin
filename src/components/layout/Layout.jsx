@@ -1,5 +1,4 @@
 import { Suspense, useState } from "react";
-import {SideBar, HeaderBar} from "@components/ui";
 import Loading from '@/components/shared/Loading'
 import { useThemeStore } from '@/store/themeStore'
 import PostLoginLayout from './PostLoginLayout'
