@@ -6,7 +6,7 @@ const dashboardsRoute = [
   {
     key: "dashboard.pos",
     path: `${DASHBOARDS_PREFIX_PATH}/pos`,
-    component: lazy(() => import("@/views/dashboards/PosDashboard")),
+    component: lazy(() => import("@/features/Dashboard/Pages/DashboardPages")),
     authority: [ADMIN, USER],
     meta: {
       pageContainerType: "contained",

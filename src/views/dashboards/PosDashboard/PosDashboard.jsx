@@ -15,7 +15,7 @@ const PosDashboard = () => {
       revalidateOnReconnect: false,
     },
   )
-  console.log(data)
+  
   return (
     <Loading loading={isLoading}>
       {data && (

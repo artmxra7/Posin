@@ -6,7 +6,7 @@ export { default as SalesTargetCard } from "./SalesTargetCard";
 export { default as ProgressCircle } from "./ProgressCircle";
 export { default as BaseCard } from "./BaseCard";
 export { default as ModalPayment } from "./ModalPayment";
-export { default as SideBar } from "./SideBar";
+// export { default as SideBar } from "./SideBar";
 export { default as HeaderBar } from "./HeaderBar";
 export { default as TableCardProduct } from "./TableCardProduct";
 export { default as SelectBarCategory } from "./SelectBarCategory";

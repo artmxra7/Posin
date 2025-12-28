@@ -1,55 +1,45 @@
 import React from "react";
 import {
-  OverviewCard,
-  SalesTargetCard,
   TableCard,
 } from "@/components/ui";
-import { BaseCard } from "../../../components/ui";
-
+import useSWR from 'swr'
+import Overview from '../components/Overview'
+import SalesTarget from '../components/SalesTarget'
+import TopProduct from '../components/TopProduct'
+import Loading from '@/components/shared/Loading'
+import { apiGetEcommerceDashboard } from '@/services/DashboardService'
 const DashboardPages = () => {
-const transactionData = [
-  {
-    order: "001",
-    status: "Completed",
-    date: "2025-09-09",
-    customer: "Andi",
-    amountSpent: 39600,
-  },
-  {
-    order: "002",
-    status: "Completed",
-    date: "2025-09-09",
-    customer: "Siti",
-    amountSpent: 27500,
-  },
-  {
-    order: "003",
-    status: "Completed",
-    date: "2025-09-09",
-    customer: "Budi",
-    amountSpent: 47025,
-  },
-];
+
+  const { data, isLoading } = useSWR(
+    ['/api/dashboard/ecommerce'],
+    () => apiGetEcommerceDashboard(),
+    {
+      revalidateOnFocus: false,
+      revalidateIfStale: false,
+      revalidateOnReconnect: false,
+    },
+  )
   return (
-    <div className="container mx-auto h-full">
-      <div>
-        <div className="flex flex-col gap-4 max-w-full overflow-x-hidden">
-          <div className="flex flex-col xl:flex-row gap-4">
-            <div className="flex flex-col gap-4 flex-1 xl:col-span-3">
-              <OverviewCard />
-              <TableCard data={transactionData} isButton={false} />
+    <Loading loading={isLoading}>
+      {data && (
+        <div>
+          <div className="flex flex-col gap-4 max-w-full overflow-x-hidden">
+            <div className="flex flex-col xl:flex-row gap-4">
+              <div className="flex flex-col gap-4 flex-1 xl:col-span-3">
+                <Overview data={data.statisticData} />
+                <TableCard data={data.transactionData} isButton={false} title={'Recent Transaction'}/>
+              </div>
+              <div className="flex flex-col gap-4 2xl:min-w-[360px]">
+                <SalesTarget data={data.salesTarget} />
+                <TopProduct data={data.topProduct} />
+              </div>
             </div>
-            <div className="flex flex-col gap-4 2xl:min-w-[360px]">
-              <SalesTargetCard />
-              <BaseCard title="Top Product" />
-              <BaseCard title="Channel Revenue" />
-              <BaseCard title="Ads" />
-            </div>
+
+
           </div>
-          <TableCard data={transactionData} isButton={false} />
         </div>
-      </div>
-    </div>
+      )}
+    </Loading>
   );
 };
 
