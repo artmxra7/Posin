@@ -1,5 +1,6 @@
 export const ROOT = '/'
 export const DASHBOARDS_PREFIX_PATH = '/dashboards'
+export const DATABASE_PREFIX_PATH = '/database'
 export const CONCEPTS_PREFIX_PATH = '/concepts'
 export const PEOPLE_PREFIX_PATH = "/people";
 export const AUTH_PREFIX_PATH = '/auth'

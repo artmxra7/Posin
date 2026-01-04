@@ -10,7 +10,7 @@ const dashboardsNavigationConfig = [
     key: "dashboard",
     path: "",
     title: "Dashboard",
-    translateKey: "nav.dashboard.dashboard",
+    translateKey: "menus.sideMenu.mainmenu",
     icon: "dashboard",
     type: NAV_ITEM_TYPE_TITLE,
     authority: [ADMIN, USER],
@@ -22,7 +22,7 @@ const dashboardsNavigationConfig = [
     subMenu: [
       {
         key: "dashboard.ecommerce",
-        path: `${DASHBOARDS_PREFIX_PATH}/pos`,
+        path: `${DASHBOARDS_PREFIX_PATH}`,
         title: "POS",
         translateKey: "nav.dashboard.dashboard",
         icon: "dashboardEcommerce",

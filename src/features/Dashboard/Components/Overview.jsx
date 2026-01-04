@@ -145,7 +145,7 @@ const Overview = ({ data }) => {
           onClick={setSelectedCategory}
         />
         <StatisticCard
-          title="Impression"
+          title="Selling"
           value={
             <AbbreviateNumber
               value={data.totalImpression[selectedPeriod].value}

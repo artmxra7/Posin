@@ -8,11 +8,11 @@ import { ADMIN, USER } from '@/constants/roles.constant'
 
 const peopleNavigationConfig = [
     {
-        key: 'concepts',
+        key: 'people',
         path: '',
-        title: 'Concepts',
-        translateKey: 'nav.concepts',
-        icon: 'concepts',
+        title: 'People',
+        translateKey: 'nav.people',
+        icon: 'people',
         type: NAV_ITEM_TYPE_TITLE,
         authority: [ADMIN, USER],
         meta: {
@@ -23,32 +23,32 @@ const peopleNavigationConfig = [
         },
         subMenu: [
             {
-                key: 'concepts.customers',
+                key: 'people.customers',
                 path: '',
                 title: 'Customers',
-                translateKey: 'nav.conceptsCustomers.customers',
+                translateKey: 'nav.peopleCustomers.customers',
                 icon: 'customers',
                 type: NAV_ITEM_TYPE_COLLAPSE,
                 authority: [ADMIN, USER],
                 meta: {
                     description: {
-                        translateKey: 'nav.conceptsCustomers.customersDesc',
+                        translateKey: 'nav.peopleCustomers.customersDesc',
                         label: 'Customer management',
                     },
                 },
                 subMenu: [
                     {
-                        key: 'concepts.customers.customerList',
+                        key: 'people.customers.customerList',
                         path: `${PEOPLE_PREFIX_PATH}/customers/customer-list`,
                         title: 'Customer List',
-                        translateKey: 'nav.conceptsCustomers.customerList',
+                        translateKey: 'nav.peopleCustomers.customerList',
                         icon: 'customerList',
                         type: NAV_ITEM_TYPE_ITEM,
                         authority: [ADMIN, USER],
                         meta: {
                             description: {
                                 translateKey:
-                                    'nav.conceptsCustomers.customerListDesc',
+                                    'nav.peopleCustomers.customerListDesc',
                                 label: 'List of all customers',
                             },
                         },

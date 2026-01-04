@@ -90,6 +90,7 @@ import {
     PiDotsThreeCircleDuotone,
     PiCircleHalfTiltDuotone,
     PiHouseLineDuotone,
+    PiToolbox,
 } from 'react-icons/pi'
 
 const navigationIcon = {
@@ -183,6 +184,7 @@ const navigationIcon = {
     otpVerification: <PiPasswordDuotone />,
     dashboard: <PiSpeedometerDuotone />,
     dashboardEcommerce: <PiShoppingCartSimpleDuotone />,
+    servicesDatabase: <PiToolbox />,
     dashboardProject: <PiRocketDuotone />,
     dashboardAnalytic: <PiChartBarDuotone />,
     dashboardMarketing: <PiMegaphoneDuotone />,

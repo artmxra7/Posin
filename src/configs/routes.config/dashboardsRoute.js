@@ -5,13 +5,13 @@ import { ADMIN, USER } from '@/constants/roles.constant'
 const dashboardsRoute = [
   {
     key: "dashboard.pos",
-    path: `${DASHBOARDS_PREFIX_PATH}/pos`,
+    path: `${DASHBOARDS_PREFIX_PATH}`,
     component: lazy(() => import("@/features/Dashboard/Pages/DashboardPages")),
     authority: [ADMIN, USER],
     meta: {
       pageContainerType: "contained",
     },
-  }
+  },
 ];
 
 export default dashboardsRoute

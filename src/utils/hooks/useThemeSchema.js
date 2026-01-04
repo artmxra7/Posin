@@ -14,7 +14,9 @@ export const mapTheme = (variables) => {
 
 function useThemeSchema() {
   const themeSchema = useThemeStore((state) => state.themeSchema);
+ 
   const mode = useThemeStore((state) => state.mode);
+  
   const applyTheme = (theme) => {
     if (presetThemeSchemaConfig[theme][mode]) {
       const themeObject = mapTheme(presetThemeSchemaConfig[theme][mode]);
